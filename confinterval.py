@@ -230,10 +230,10 @@ def get_arguments():
     '''
     import argparse
     parser = argparse.ArgumentParser('stats')
-    parser.add_argument('-f', '--file', required=True,
+    parser.add_argument('-i', '--input', required=True,
                         help='Input CSV file')
-    parser.add_argument('-i', '--identifier', required=True,
-                        help='Identifier field')
+    parser.add_argument('-k', '--key', required=True,
+                        help='Key field')
     parser.add_argument('-o', '--output',
                         help='Output file')
     parser.add_argument('-d', '--delimiter',
@@ -251,8 +251,8 @@ def main():
     Main routine
     '''
     args = get_arguments()
-    in_file = args.file
-    id_field = args.identifier
+    in_file = args.input
+    id_field = args.key
     delimiter = args.delimiter
     confidence = args.confidence
     out_file = args.output
