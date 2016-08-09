@@ -229,7 +229,7 @@ def get_arguments():
     Get arguments
     '''
     import argparse
-    parser = argparse.ArgumentParser('stats')
+    parser = argparse.ArgumentParser('ConfInterval')
     parser.add_argument('-i', '--input', required=True,
                         help='Input CSV file')
     parser.add_argument('-k', '--key', required=True,
