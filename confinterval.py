@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-Module to calculate error based on a confidence interval
+Module to calculate confidence interval over experiment results
 '''
 
 import csv
@@ -237,10 +237,12 @@ def get_arguments():
     parser.add_argument('-o', '--output',
                         help='Output file')
     parser.add_argument('-d', '--delimiter',
-                        help='Field delimiter',
+                        help='Field delimiter (default: ' +
+                        DEFAULT_DELIMITER + ')',
                         default=DEFAULT_DELIMITER)
     parser.add_argument('-c', '--confidence', type=float,
-                        help='Confidence to be used',
+                        help='Confidence (default: ' +
+                        str(DEFAULT_CONFIDENCE) + ')',
                         default=DEFAULT_CONFIDENCE)
     args = parser.parse_args()
     return args
