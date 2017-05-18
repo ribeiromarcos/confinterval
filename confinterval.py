@@ -183,8 +183,7 @@ def read_file(fname, id_field, field_delimiter):
     return data_dict
 
 
-def write_file(fname, id_field, record_list,
-               field_delimiter=DEFAULT_DELIMITER):
+def write_file(fname, id_field, record_list):
     '''
     Write record_list to file
     '''
@@ -199,7 +198,7 @@ def write_file(fname, id_field, record_list,
         field_list.insert(0, id_field)
         output_file = open(fname, 'w')
         writer = csv.DictWriter(output_file, field_list,
-                                delimiter=field_delimiter)
+                                delimiter=DEFAULT_DELIMITER)
         header = {field: field for field in field_list}
         writer.writerow(header)
         for rec in record_list:
@@ -260,7 +259,7 @@ def main():
     out_file = args.output
     rec_list = calculate_statistics(in_file, id_field, delimiter, confidence)
     if out_file is not None:
-        write_file(out_file, id_field, rec_list, delimiter)
+        write_file(out_file, id_field, rec_list)
 
 
 if __name__ == '__main__':
